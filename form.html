@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <style>
+      .btn-submit {
+        background-color: "brown";
+        color: red;
+      }
+    </style>
+    <title>Form</title>
+  </head>
+  <body style="background-color: burlywood">
+    <h1>Register</h1>
+    First Name: <input type="text" id="txt-fname" /><br />
+    Last Name : <input type="text" id="txt-lname" /><br />
+    phone:<input type="number" id="num-number" /><br />
+    Email : <input type="text" id="txt-email" /><br />
+    Password : <input type="password" id="txt-password" /><br />
+    <select>
+      <option> Male</option>
+      <option>Female</option>
+    </select>
+    Gender:<input type="dropdown" id="txt-Gender" /><br />
+    <textarea name="text" id="" cols="30" rows="10"></textarea><br />
+    <input type="date" id="txt-date" /><br />
+    <input
+      type="submit"
+      value="Submit"
+      class="btn-submit"
+      onclick="onSubmit()"
+    />
+    <input type="button" value="Reset" onclick="onReset()" />
+    <input type="button" value="Pop" onclick="onpop()" />
+  </body>
+  <script>
+    let data = [];
+    function onSubmit() {
+      var fname = document.getElementById("txt-fname").value;
+      var lname = document.getElementById("txt-lname").value;
+      var number = document.getElementById("num-number").value;
+      var email = document.getElementById("txt-email").value;
+      var password = document.getElementById("txt-password").value;
+      var Gender = document.getElementById("txt-Gender").value;
+      var textarea = document.getElementById("").value;
+      var date = document.getElementById("txt-date").value;
+
+      data.push(fname);
+      data.push(lname);
+      data.push(number);
+      data.push(email);
+      data.push(password);
+      data.push(Gender);
+      data.push();
+      data.push(date);
+
+      // data.pop(fname);
+      // data.pop(lname);
+      // data.pop(number);
+      // data.pop(email);
+      // data.pop(password);
+      // data.pop(Gender);
+      // data.pop();
+      // data.pop(date);
+
+      localStorage.setItem("data", data);
+    }
+    function onReset() {
+      localStorage.removeItem("data");
+    }
+  </script>
+</html>
